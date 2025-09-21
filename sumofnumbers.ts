@@ -1,35 +1,38 @@
-function sumFor(list: number[]): number {
-    let sum = 0;
-    for (let i = 0; i < list.length; i++) {
-        sum += list[i];
-    }
-    return sum;
+// Sum using for-loop
+function sumFor(numbers: number[]): number {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
 }
 
-function sumWhile(list: number[]): number {
-    let sum = 0;
-    let i = 0;
-    while (i < list.length) {
-        sum += list[i];
-        i++;
-    }
-    return sum;
+// Sum using while-loop
+function sumWhile(numbers: number[]): number {
+  let sum = 0;
+  let i = 0;
+  while (i < numbers.length) {
+    sum += numbers[i];
+    i++;
+  }
+  return sum;
 }
 
-function sumRecursion(list: number[]): number {
-    if (list.length === 0) {
-        return 0;
-    }
-    return list[0] + sumRecursion(list.slice(1));
+// Sum using recursion
+function sumRecursion(numbers: number[]): number {
+  if (numbers.length === 0) {
+    return 0;
+  }
+  return numbers[0] + sumRecursion(numbers.slice(1));
 }
 
-function sumTheFunctionalWay(list: number[]): number {
-    return list.reduce((sum, num) => sum + num, 0);
+// Sum using functional programming
+function sumTheFunctionalWay(numbers: number[]): number {
+  return numbers.reduce((sum, num) => sum + num, 0);
 }
 
 // Test the functions
-const numbers = [1, 2, 3, 4];
-console.log(sumFor(numbers));
-console.log(sumWhile(numbers));
-console.log(sumRecursion(numbers));
-console.log(sumTheFunctionalWay(numbers));
+console.log(sumFor([1, 2, 3, 4]));
+console.log(sumWhile([1, 2, 3, 4]));
+console.log(sumRecursion([1, 2, 3, 4]));
+console.log(sumTheFunctionalWay([1, 2, 3, 4]));
